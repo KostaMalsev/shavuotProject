@@ -1,3 +1,6 @@
 CoverageDataManager.getInstance(myProperties.getProject()).getCurrentSuitesBundle();
 
 RunToolbarPopup.kt
+
+
+com.intellij.idea.Main
