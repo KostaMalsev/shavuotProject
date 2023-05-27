@@ -8,3 +8,14 @@ com.intellij.idea.Main
 
 com.intellij.openapi.actionSystem.impl.ActionButton@501834128
 
+
+//Successfull debug:
+ActionButton.java:
+  protected void performAction(MouseEvent e) {
+
+performDumbAwareWithCallbacks(@NotNull AnAction action,
+                                                   @NotNull AnActionEvent event,
+                                                   @NotNull Runnable performRunnable) 
+       Project project = event.getProject();
+      
+
