@@ -17,5 +17,6 @@ performDumbAwareWithCallbacks(@NotNull AnAction action,
                                                    @NotNull AnActionEvent event,
                                                    @NotNull Runnable performRunnable) 
        Project project = event.getProject();
+      //Project = 'Project(name=untitled1, containerState=COMPONENT_CREATED, componentStore=/Users/kosta/IdeaProjects/untitled1)'
       
 
