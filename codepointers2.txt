@@ -9,6 +9,12 @@ com.intellij.idea.Main
 com.intellij.openapi.actionSystem.impl.ActionButton@501834128
 
 
+
+Reference:
+https://github.com/dkandalov/live-plugin/blob/master/IntellijApiCheatSheet.md
+
+
+
 //Successfull debug:
 ActionButton.java set breakpoint on line 204:
   protected void performAction(MouseEvent e) {
@@ -17,8 +23,13 @@ at ActionUtil.java@337:
 performDumbAwareWithCallbacks(@NotNull AnAction action,
                                                    @NotNull AnActionEvent event,
                                                    @NotNull Runnable performRunnable) 
-       Project project = event.getProject();
+      //Where action="Run (Run selected configuration)", 
+      // event:myDataContext = "component=EditorComponent file=file:///Users/kosta/IdeaProjects/untitled1/src/Main.java"  and more
+      Project project = event.getProject();
       //Project = 'Project(name=untitled1, containerState=COMPONENT_CREATED, componentStore=/Users/kosta/IdeaProjects/untitled1)'
+      
+      fireBeforeActionPerformed(action: AnAction, event: AnActionEvent)//implemented at ActionManagerImpl.kt
+      
       Component component //EditorComponent file=file:///Users/kosta/IdeaProjects/untitled1/src/Main.java
       performRunnable.run();//Where arg1=com.intellij.openapi.actionSystem.impl.ActionButton[,135,2,26x24,alignmentX=0.0,alignmentY=0.0,border=com.intellij.openapi.actionSystem.impl.ActionToolbarImpl$ActionButtonBorder@1bb16a84,flags=128,maximumSize=,minimumSize=,preferredSize=]
                         and arg2=AnActionEvent object
