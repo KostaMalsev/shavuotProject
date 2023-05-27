@@ -13,6 +13,7 @@ com.intellij.openapi.actionSystem.impl.ActionButton@501834128
 ActionButton.java set breakpoint on line 204:
   protected void performAction(MouseEvent e) {
 
+at ActionUtil.java@337:
 performDumbAwareWithCallbacks(@NotNull AnAction action,
                                                    @NotNull AnActionEvent event,
                                                    @NotNull Runnable performRunnable) 
